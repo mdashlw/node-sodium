@@ -35,6 +35,7 @@ var includeFiles = [
     'include/sodium/crypto_core_ed25519.h',
     'include/sodium/crypto_core_hchacha20.h',
     'include/sodium/crypto_core_hsalsa20.h',
+    'include/sodium/crypto_core_ristretto255.h',
     'include/sodium/crypto_core_salsa20.h',
     'include/sodium/crypto_core_salsa2012.h',
     'include/sodium/crypto_core_salsa208.h',
@@ -55,6 +56,7 @@ var includeFiles = [
     'include/sodium/crypto_scalarmult.h',
     'include/sodium/crypto_scalarmult_curve25519.h',
     'include/sodium/crypto_scalarmult_ed25519.h',
+    'include/sodium/crypto_scalarmult_ristretto255.h',
     'include/sodium/crypto_secretbox.h',
     'include/sodium/crypto_secretbox_xchacha20poly1305.h',
     'include/sodium/crypto_secretbox_xsalsa20poly1305.h',
@@ -76,7 +78,7 @@ var includeFiles = [
     'include/sodium/crypto_verify_64.h',
     'include/sodium/export.h',
     'include/sodium/randombytes.h',
-    'include/sodium/randombytes_salsa20_random.h',
+    'include/sodium/randombytes_internal_random.h',
     'include/sodium/randombytes_sysrandom.h',
     'include/sodium/runtime.h',
     'include/sodium/utils.h',
@@ -156,7 +158,8 @@ function getPlatformToolsVersion() {
         2010: 'v100',
         2012: 'v110',
         2013: 'v120',
-        2015: 'v140'
+        2015: 'v140',
+        2019: 'v142'
     }
 
     checkMSVSVersion();
@@ -241,7 +244,7 @@ function gypConfigure(next) {
 }
 
 function doDownloads(next) {
-    var baseURL = 'https://raw.githubusercontent.com/paixaop/libsodium-bin/master';
+    var baseURL = 'https://raw.githubusercontent.com/andesyv/libsodium-bin/master';
     console.log('Download libsodium.lib');
     var ver = getPlatformToolsVersion();
     console.log('Platform Tool is ' + ver);
@@ -325,7 +328,7 @@ function checkMSVSVersion() {
         errorSetMSVSVersion();
     }
     console.log('MS Version: ' + process.env.npm_config_msvs_version);
-    if (process.env.npm_config_msvs_version.search(/^2010|2012|2013|2015$/)) {
+    if (process.env.npm_config_msvs_version.search(/^2010|2012|2013|2015|2019$/)) {
         errorInvalidMSVSVersion();
     }
 }
