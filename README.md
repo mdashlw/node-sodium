@@ -1,5 +1,19 @@
 [![Build Status](https://secure.travis-ci.org/paixaop/node-sodium.png)](http://travis-ci.org/paixaop/node-sodium)
 
+### Fork
+
+```
+npm install git@github.com:mdashlw/node-sodium.git
+```
+
+#### andesyv
+
+Update `libsodium` and support MSVC 2019.
+
+#### mdashlw
+
+Update `node-gyp` (adds support for Python v3).
+
 # node-sodium
 
 Version 3.0 has been refactored to use N-API, instead of NaN, so it should be more resistent to node version upgrades.
