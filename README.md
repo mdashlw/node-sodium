@@ -3,16 +3,16 @@
 ### Fork
 
 ```
-npm install git@github.com:mdashlw/node-sodium.git
+npm install mdashlw/node-sodium#02c92937c098d4c2a0a3844ea7abd180ff115cf7
 ```
 
-#### andesyv
+#### [andesyv](https://github.com/andesyv/node-sodium)
 
-Update `libsodium` and support MSVC 2019.
+- [`6e5e6f8f48893f7920c090b284024144a6fb4db0`](https://github.com/andesyv/node-sodium/commit/6e5e6f8f48893f7920c090b284024144a6fb4db0) Update `libsodium` and support MSVC 2019.
 
-#### mdashlw
+#### [mdashlw](https://github.com/mdashlw/node-sodium)
 
-Update `node-gyp` (adds support for Python v3).
+- [`02c92937c098d4c2a0a3844ea7abd180ff115cf7`](https://github.com/mdashlw/node-sodium/commit/02c92937c098d4c2a0a3844ea7abd180ff115cf7) Update `node-gyp` (adds support for Python v3).
 
 # node-sodium
 
